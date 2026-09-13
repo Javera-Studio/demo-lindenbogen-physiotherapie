@@ -20,8 +20,26 @@ export function ServiceCard({ service }: { service: Service }) {
           </li>
         ))}
       </ul>
+
+      <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-soft">
+        <span className="inline-flex items-center gap-1.5">
+          <svg aria-hidden="true" viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.6">
+            <circle cx="8" cy="8" r="6.2" />
+            <path d="M8 4.5V8l2.6 1.5" strokeLinecap="round" />
+          </svg>
+          {service.duration}
+        </span>
+        {service.prescription && service.selfPay ? (
+          <span>Auf Rezept oder als Selbstzahlerleistung</span>
+        ) : service.prescription ? (
+          <span>Auf Rezept möglich</span>
+        ) : (
+          <span>Selbstzahlerleistung</span>
+        )}
+      </div>
+
       <Link
-        href="/leistungen"
+        href={`/leistungen#${service.slug}`}
         className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-terracotta-dark hover:text-terracotta"
       >
         Mehr erfahren

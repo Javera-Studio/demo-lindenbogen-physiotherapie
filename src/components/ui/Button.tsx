@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "accent" | "inverse";
 
 const variantClasses: Record<Variant, string> = {
   primary:
@@ -10,6 +10,12 @@ const variantClasses: Record<Variant, string> = {
     "bg-transparent text-petrol border border-petrol hover:bg-petrol-soft",
   ghost:
     "bg-transparent text-ink border border-line hover:bg-cream-soft",
+  // Terrakotta-CTA, z. B. für den primären Hero-Call-to-Action auf dunklem Grund.
+  accent:
+    "bg-terracotta text-cream hover:bg-terracotta-dark active:bg-terracotta-dark",
+  // Helle Outline-Variante für dunkle (Petrol-)Hintergründe, z. B. Hero.
+  inverse:
+    "bg-transparent text-cream border border-cream/60 hover:bg-cream/10",
 };
 
 const base =

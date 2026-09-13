@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { PracticeImage } from "@/components/ui/PracticeImage";
 import { TeamCard } from "@/components/TeamCard";
 import { team } from "@/lib/data/team";
 
@@ -36,50 +36,54 @@ export default function PraxisTeamPage() {
 
       <section className="py-14 sm:py-16">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <Reveal>
-              <PlaceholderImage
-                finalSrc="/images/praxis-behandlungsraum.webp"
-                alt="Heller, moderner Behandlungsraum bei LINDENBOGEN Physiotherapie"
-                aspect="4/5"
-                tone="sage"
-              />
-            </Reveal>
-            <Reveal delay={80}>
-              <PlaceholderImage
-                finalSrc="/images/praxis-trainingsbereich.webp"
-                alt="Moderne Trainingsfläche mit Geräten für Krankengymnastik am Gerät"
-                aspect="4/5"
-                tone="petrol"
-              />
-            </Reveal>
-          </div>
+          <Reveal>
+            <PracticeImage
+              src="/images/team-gruppenfoto.webp"
+              alt="Das Team von LINDENBOGEN Physiotherapie gemeinsam in den Praxisräumen"
+              aspect="16/10"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+            />
+          </Reveal>
         </Container>
       </section>
 
       <section className="bg-cream-soft py-14 sm:py-16">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-6 lg:grid-cols-[1fr_1.25fr] lg:items-center">
             <Reveal>
-              <SectionHeading
-                eyebrow="Unsere Haltung"
-                title="Individuelle Behandlung statt Standardprogramm"
-                description="Jede Behandlung beginnt mit einem persönlichen Gespräch. Wir nehmen uns Zeit für Ihren Befund, erklären unsere Einschätzung verständlich und planen die Therapie gemeinsam mit Ihnen – mit dem Ziel, dass Fortschritte auch im Alltag spürbar bleiben."
+              <PracticeImage
+                src="/images/praxis-behandlungsraum.webp"
+                alt="Heller, moderner Behandlungsraum bei LINDENBOGEN Physiotherapie"
+                aspect="4/5"
+                sizes="(min-width: 1024px) 40vw, 100vw"
               />
             </Reveal>
             <Reveal delay={80}>
-              <PlaceholderImage
-                finalSrc="/images/praxis-behandlungsraum.webp"
-                alt="Inhaberin Jana Richter im Gespräch mit einer Patientin über den Behandlungsplan"
-                aspect="4/5"
-                tone="terracotta"
+              <PracticeImage
+                src="/images/praxis-empfang-wartebereich.webp"
+                alt="Empfangs- und Wartebereich der Praxis mit ruhiger, freundlicher Atmosphäre"
+                aspect="16/10"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
             </Reveal>
           </div>
         </Container>
       </section>
 
-      <section className="py-14 sm:py-20">
+      <section className="py-14 sm:py-16">
+        <Container className="max-w-3xl">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Unsere Haltung"
+              title="Individuelle Behandlung statt Standardprogramm"
+              description="Jede Behandlung beginnt mit einem persönlichen Gespräch. Wir nehmen uns Zeit für Ihren Befund, erklären unsere Einschätzung verständlich und planen die Therapie gemeinsam mit Ihnen – mit dem Ziel, dass Fortschritte auch im Alltag spürbar bleiben."
+              align="center"
+            />
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="bg-cream-soft py-14 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading eyebrow="Team" title="Die Menschen hinter LINDENBOGEN" />
@@ -95,28 +99,6 @@ export default function PraxisTeamPage() {
                 </div>
               </Reveal>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-cream-soft py-14 sm:py-20">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <Reveal>
-              <PlaceholderImage
-                finalSrc="/images/team-gruppenfoto.webp"
-                alt="Gemeinsames Teamfoto von LINDENBOGEN Physiotherapie in den Praxisräumen"
-                aspect="16/10"
-                tone="sage"
-              />
-            </Reveal>
-            <Reveal delay={80}>
-              <SectionHeading
-                eyebrow="Kleine Teamstruktur"
-                title="Bewusst überschaubar"
-                description="Ein kleines Team bedeutet kurze Wege, klare Ansprechpartner und Kontinuität über den gesamten Behandlungsverlauf hinweg – ohne wechselnde Bezugspersonen bei jedem Termin."
-              />
-            </Reveal>
           </div>
         </Container>
       </section>

@@ -9,14 +9,14 @@ const steps = [
       "Rufen Sie an, schreiben Sie uns eine E-Mail oder nutzen Sie das Kontaktformular – wir melden uns zeitnah zurück.",
   },
   {
-    title: "Befund und persönliche Ziele besprechen",
+    title: "Befund und gemeinsames Ziel",
     description:
       "Im ersten Termin erheben wir gemeinsam mit Ihnen den Befund und klären, was Sie im Alltag oder Sport erreichen möchten.",
   },
   {
-    title: "Individuelle Behandlung beginnen",
+    title: "Individuelle Behandlung und aktive Begleitung",
     description:
-      "Auf Basis von Befund und Zielen beginnt eine Behandlung, die zu Ihnen passt – mit verständlichen Schritten für zu Hause.",
+      "Auf Basis von Befund und Zielen beginnt eine Behandlung, die zu Ihnen passt – mit verständlichen Übungen für zu Hause.",
   },
 ];
 

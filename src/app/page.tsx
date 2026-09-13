@@ -2,11 +2,9 @@ import { Hero } from "@/components/home/Hero";
 import { Intro } from "@/components/home/Intro";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { ParallaxStatement } from "@/components/home/ParallaxStatement";
-import { TeamPreview } from "@/components/home/TeamPreview";
-import { Advantages } from "@/components/home/Advantages";
 import { ProcessSteps } from "@/components/home/ProcessSteps";
+import { TeamPreview } from "@/components/home/TeamPreview";
 import { Testimonials } from "@/components/home/Testimonials";
-import { PatientInfoPreview } from "@/components/home/PatientInfoPreview";
 import { ContactSection } from "@/components/home/ContactSection";
 
 export default function HomePage() {
@@ -16,11 +14,9 @@ export default function HomePage() {
       <Intro />
       <ServicesPreview />
       <ParallaxStatement />
-      <TeamPreview />
-      <Advantages />
       <ProcessSteps />
+      <TeamPreview />
       <Testimonials />
-      <PatientInfoPreview />
       <ContactSection />
     </>
   );

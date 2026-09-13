@@ -1,34 +1,56 @@
+import Image from "next/image";
 import { LinkButton } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 
-const trustItems = [
-  "Alle Kassen & privat",
-  "Zeitnahe Termine",
-  "Persönliche Betreuung",
-];
+const trustItems = ["Alle Kassen", "Privatpatienten", "Selbstzahler"];
 
 export function Hero() {
   return (
-    <section className="overflow-hidden bg-gradient-to-b from-cream-soft to-cream">
-      <Container className="grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14 lg:py-24">
-        <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
+    <section className="relative isolate overflow-hidden bg-petrol-dark">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-aktive-physiotherapie.webp"
+          alt="Physiotherapeutin begleitet einen Patienten bei einer aktiven, kontrollierten Bewegungsübung in einer hellen, modernen Praxis"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Mobil: vertikaler Verlauf, Text liegt unten über dem Bild */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-petrol-dark via-petrol-dark/85 to-petrol-dark/20 md:hidden"
+      />
+      {/* Desktop: horizontaler Verlauf, Bild bleibt zu ca. drei Vierteln sichtbar */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 hidden md:block"
+        style={{
+          background:
+            "linear-gradient(100deg, var(--color-petrol-dark) 0%, var(--color-petrol-dark) 26%, rgba(20,52,51,0.62) 44%, rgba(20,52,51,0) 66%)",
+        }}
+      />
+
+      <Container className="relative flex min-h-[76svh] items-end pb-14 md:min-h-[74vh] md:items-center md:pb-0">
+        <div className="max-w-xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta">
             Physiotherapie in Dresden-Plauen
           </p>
-          <h1 className="font-serif text-4xl leading-[1.1] text-petrol-dark sm:text-5xl lg:text-[3.4rem]">
-            Wieder beweglich. Wieder im Alltag.
+          <h1 className="font-serif text-4xl leading-[1.1] text-cream sm:text-5xl lg:text-[3.4rem]">
+            Bewegung beginnt mit Vertrauen.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
-            Individuelle Physiotherapie mit Zeit, moderner Behandlung und
-            einem klaren Blick auf Ihre persönlichen Ziele.
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-cream/90 sm:text-lg">
+            Individuelle Physiotherapie mit Zeit, fachlicher Klarheit und
+            einem Behandlungsplan, der zu Ihrem Alltag passt.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <LinkButton href="/kontakt" variant="primary">
+            <LinkButton href="/kontakt" variant="accent">
               Termin anfragen
             </LinkButton>
-            <LinkButton href="/leistungen" variant="secondary">
+            <LinkButton href="/leistungen" variant="inverse">
               Leistungen ansehen
             </LinkButton>
           </div>
@@ -37,12 +59,12 @@ export function Hero() {
             {trustItems.map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-2 text-sm font-medium text-ink"
+                className="flex items-center gap-2 text-sm font-medium text-cream/90"
               >
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 16 16"
-                  className="h-4 w-4 shrink-0 text-sage"
+                  className="h-4 w-4 shrink-0 text-terracotta"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.8"
@@ -54,13 +76,6 @@ export function Hero() {
             ))}
           </ul>
         </div>
-
-        <PlaceholderImage
-          finalSrc="/images/hero-aktive-physiotherapie.webp"
-          alt="Physiotherapeutin begleitet einen Patienten bei einer aktiven, kontrollierten Bewegungsübung in einer hellen, modernen Praxis"
-          aspect="16/10"
-          tone="petrol"
-        />
       </Container>
     </section>
   );

@@ -37,7 +37,7 @@ export function ContactSection() {
                 Termin anfragen
               </LinkButton>
               <LinkButton href={practice.phoneHref} variant="secondary">
-                Anrufen
+                Jetzt anrufen
               </LinkButton>
             </div>
           </Reveal>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { ServiceDetailCard } from "@/components/ServiceDetailCard";
 import { PriceTable } from "@/components/PriceTable";
 import { LinkButton } from "@/components/ui/Button";
@@ -12,6 +11,15 @@ export const metadata: Metadata = {
   title: "Leistungen & Preise",
   description:
     "Physiotherapeutische Leistungen von LINDENBOGEN in Dresden-Plauen: Krankengymnastik, Manuelle Therapie, Lymphdrainage, KGG, Sportphysiotherapie und CMD-Behandlung – inklusive transparenter Musterpreise.",
+};
+
+// Nur Leistungen, für die bereits ein finales Foto vorliegt, erhalten ein
+// Bild im Detailabschnitt. Kein Platzhalter und kein Fremdbild als Ersatz.
+const serviceImages: Partial<Record<string, { src: string; alt: string }>> = {
+  "manuelle-therapie": {
+    src: "/images/therapie-manuelle-therapie.webp",
+    alt: "Physiotherapeutin führt eine manuelle Behandlungstechnik an Schulter und Arm eines Patienten durch",
+  },
 };
 
 export default function LeistungenPage() {
@@ -33,34 +41,23 @@ export default function LeistungenPage() {
               Leistungen und deren typische Einsatzbereiche.
             </p>
           </Reveal>
-        </Container>
-      </section>
 
-      <section className="py-14 sm:py-16">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <Reveal>
-              <PlaceholderImage
-                finalSrc="/images/behandlung-manuelle-therapie.webp"
-                alt="Physiotherapeutin führt eine manuelle Behandlungstechnik an Schulter und Arm eines Patienten durch"
-                aspect="3/2"
-                tone="terracotta"
-              />
-            </Reveal>
-            <Reveal delay={80}>
-              <div className="space-y-4 text-base leading-relaxed text-ink-soft">
-                <p>
-                  Jede Leistung kann grundsätzlich auf ärztliche Verordnung
-                  oder – nach vorheriger Absprache – als
-                  Selbstzahlerbehandlung in Anspruch genommen werden.
-                </p>
-                <p>
-                  Bei Fragen zur passenden Leistung sprechen Sie uns gerne
-                  an – wir beraten Sie vor der Terminvereinbarung.
-                </p>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={80}>
+            <nav
+              aria-label="Sprungnavigation zu den Leistungen"
+              className="mt-8 flex flex-wrap gap-2"
+            >
+              {services.map((service) => (
+                <a
+                  key={service.slug}
+                  href={`#${service.slug}`}
+                  className="min-h-11 rounded-full border border-line bg-surface px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:border-petrol hover:text-petrol-dark"
+                >
+                  {service.name}
+                </a>
+              ))}
+            </nav>
+          </Reveal>
         </Container>
       </section>
 
@@ -72,7 +69,10 @@ export default function LeistungenPage() {
           <div className="mt-10 space-y-6">
             {services.map((service, index) => (
               <Reveal key={service.slug} delay={index * 50}>
-                <ServiceDetailCard service={service} />
+                <ServiceDetailCard
+                  service={service}
+                  image={serviceImages[service.slug]}
+                />
               </Reveal>
             ))}
           </div>
@@ -122,17 +122,12 @@ export default function LeistungenPage() {
                 Selbstzahlerleistungen – Musterpreise
               </h3>
               <p className="mt-2 max-w-2xl text-sm text-ink-soft sm:text-base">
-                Die folgenden Beträge sind unverbindliche Musterpreise
-                dieser fiktiven Konzeptpraxis.
+                Unverbindliche Musterpreise dieser fiktiven Konzeptpraxis –
+                keine realen Angebote.
               </p>
               <div className="mt-5">
                 <PriceTable />
               </div>
-              <p className="mt-4 text-xs italic text-ink-soft">
-                Die genannten Preise dienen ausschließlich der Darstellung
-                innerhalb dieser Konzeptstudie und sind keine realen
-                Angebote.
-              </p>
             </div>
           </Reveal>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -26,13 +27,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-cream/95 backdrop-blur supports-[backdrop-filter]:bg-cream/85">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="font-serif text-xl font-semibold tracking-wide text-petrol-dark sm:text-2xl">
-            {practice.shortName}
-          </span>
-          <span className="text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft sm:text-xs">
-            {practice.claim}
-          </span>
+        <Link href="/" className="flex shrink-0 items-center">
+          <Image
+            src="/logo-lindenbogen.svg"
+            alt="LINDENBOGEN Physiotherapie – Praxis für Physiotherapie in Dresden-Plauen"
+            width={228}
+            height={45}
+            className="h-8 w-auto sm:h-10 lg:h-11"
+          />
         </Link>
 
         <nav
