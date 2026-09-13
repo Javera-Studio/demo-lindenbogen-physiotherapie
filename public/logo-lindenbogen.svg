@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" role="img" aria-labelledby="title description">
+  <title id="title">LINDENBOGEN Physiotherapie Dresden-Plauen</title>
+  <desc id="description">Eine reduzierte Bogenmarke in Petrol und Terrakotta neben dem Praxisnamen.</desc>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path
+      d="M28 112 A58 58 0 0 1 144 112"
+      stroke="#bf7350"
+      stroke-width="7"
+    />
+    <path
+      d="M50 112 C66 89 88 80 108 84 C121 87 131 94 140 104"
+      stroke="#143433"
+      stroke-width="4"
+    />
+    <path
+      d="M28 112 H144"
+      stroke="#143433"
+      stroke-width="3"
+    />
+  </g>
+
+  <text
+    x="180"
+    y="77"
+    fill="#143433"
+    font-family="'Cormorant Garamond', 'Times New Roman', serif"
+    font-size="48"
+    font-weight="600"
+    letter-spacing="2.4"
+  >LINDENBOGEN</text>
+  <text
+    x="183"
+    y="112"
+    fill="#4b5654"
+    font-family="Inter, Arial, sans-serif"
+    font-size="15"
+    font-weight="500"
+    letter-spacing="3.1"
+  >PHYSIOTHERAPIE DRESDEN-PLAUEN</text>
+</svg>
