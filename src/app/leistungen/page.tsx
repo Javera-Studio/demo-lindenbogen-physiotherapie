@@ -20,6 +20,10 @@ const serviceImages: Partial<Record<string, { src: string; alt: string }>> = {
     src: "/images/therapie-manuelle-therapie.webp",
     alt: "Physiotherapeutin führt eine manuelle Behandlungstechnik an Schulter und Arm eines Patienten durch",
   },
+  "manuelle-lymphdrainage": {
+    src: "/images/therapie-manuelle-lymphdrainage.webp",
+    alt: "Physiotherapeutin führt eine sanfte manuelle Lymphdrainage durch",
+  },
 };
 
 export default function LeistungenPage() {
