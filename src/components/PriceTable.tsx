@@ -29,7 +29,7 @@ export function PriceTable() {
             Konzeptstudie
           </caption>
           <thead>
-            <tr className="border-b border-line bg-cream-soft text-ink">
+            <tr className="border-b border-line bg-mist text-ink">
               <th scope="col" className="px-5 py-3.5 font-semibold">
                 Leistung
               </th>

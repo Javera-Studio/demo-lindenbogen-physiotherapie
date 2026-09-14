@@ -7,7 +7,7 @@ import { practice } from "@/lib/data/practice";
 
 export function ContactSection() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-mist py-16 sm:py-20">
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <Reveal>

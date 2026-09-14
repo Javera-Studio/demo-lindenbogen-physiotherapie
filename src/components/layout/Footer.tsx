@@ -4,7 +4,7 @@ import { mainNav } from "@/lib/nav";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-cream-soft">
+    <footer className="border-t border-line bg-mist">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-3">
         <div>
           <p className="font-serif text-xl font-semibold text-petrol-dark">

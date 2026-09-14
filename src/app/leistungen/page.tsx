@@ -44,7 +44,7 @@ const serviceImages: Partial<Record<string, { src: string; alt: string }>> = {
 export default function LeistungenPage() {
   return (
     <>
-      <section className="bg-gradient-to-b from-cream-soft to-cream py-14 sm:py-20">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
           <Reveal>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
@@ -60,27 +60,10 @@ export default function LeistungenPage() {
               Leistungen und deren typische Einsatzbereiche.
             </p>
           </Reveal>
-
-          <Reveal delay={80}>
-            <nav
-              aria-label="Sprungnavigation zu den Leistungen"
-              className="mt-8 flex flex-wrap gap-2"
-            >
-              {services.map((service) => (
-                <a
-                  key={service.slug}
-                  href={`#${service.slug}`}
-                  className="min-h-11 rounded-full border border-line bg-surface px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:border-petrol hover:text-petrol-dark"
-                >
-                  {service.name}
-                </a>
-              ))}
-            </nav>
-          </Reveal>
         </Container>
       </section>
 
-      <section className="bg-cream-soft py-14 sm:py-16">
+      <section className="bg-mist py-14 sm:py-16">
         <Container>
           <Reveal>
             <SectionHeading title="Unsere Leistungen im Detail" />

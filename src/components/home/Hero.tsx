@@ -4,41 +4,48 @@ import { Container } from "@/components/ui/Container";
 
 const trustItems = ["Persönliche Betreuung", "Zeitnahe Termine", "Moderne Praxisräume"];
 
-export function Hero() {
+/**
+ * Bildfläche statt Vollflächen-Hintergrund: Das Quellfoto ist 1586×992px
+ * (Seitenverhältnis ≈ 1,6:1); beide Köpfe liegen bei ca. 5–10 % von oben und
+ * horizontal zwischen ca. 44 % und 72 % der Bildbreite. Ein 4:5-Rahmen zeigt
+ * die volle Bildhöhe verlustfrei (kein vertikaler Beschnitt, Köpfe behalten
+ * ihren natürlichen Freiraum nach oben) und beschneidet nur seitlich – die
+ * object-position-X von 58 % zentriert exakt das Band der beiden Köpfe im
+ * Rahmen, ohne zu zoomen oder zu verzerren.
+ */
+function HeroPhoto() {
   return (
-    <section className="relative isolate overflow-hidden bg-petrol-dark">
-      <div className="absolute inset-0">
+    <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+      <div
+        className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem]"
+        style={{
+          maskImage: "linear-gradient(to right, transparent 0%, black 24%)",
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 24%)",
+        }}
+      >
         <Image
           src="/images/hero-aktive-physiotherapie.webp"
           alt="Physiotherapeutin begleitet einen Patienten bei einer aktiven, kontrollierten Bewegungsübung in einer hellen, modernen Praxis"
           fill
           priority
-          sizes="100vw"
+          sizes="(min-width: 1024px) 480px, 80vw"
           className="object-cover"
+          style={{ objectPosition: "58% top" }}
         />
       </div>
+    </div>
+  );
+}
 
-      {/* Mobil: vertikaler Verlauf, Text liegt unten über dem Bild */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-petrol-dark via-petrol-dark/85 to-petrol-dark/20 md:hidden"
-      />
-      {/* Desktop: horizontaler Verlauf, Bild bleibt zu ca. drei Vierteln sichtbar */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 hidden md:block"
-        style={{
-          background:
-            "linear-gradient(100deg, var(--color-petrol-dark) 0%, var(--color-petrol-dark) 26%, rgba(20,52,51,0.62) 44%, rgba(20,52,51,0) 66%)",
-        }}
-      />
-
-      <Container className="relative flex min-h-[76svh] items-end pb-14 md:min-h-[74vh] md:items-center md:pb-0">
-        <div className="max-w-xl">
+export function Hero() {
+  return (
+    <section className="relative isolate overflow-hidden bg-petrol-dark">
+      <Container className="relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[1fr_1.28fr] lg:items-center lg:gap-14 lg:py-20">
+        <div className="order-2 lg:order-1">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta">
             Physiotherapie in Dresden-Plauen
           </p>
-          <h1 className="font-serif text-4xl leading-[1.1] text-cream sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="font-serif text-4xl leading-[1.1] text-cream sm:text-5xl lg:text-[3.2rem]">
             Bewegung beginnt mit Vertrauen.
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-cream/90 sm:text-lg">
@@ -75,6 +82,10 @@ export function Hero() {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="order-1 lg:order-2">
+          <HeroPhoto />
         </div>
       </Container>
     </section>

@@ -11,6 +11,8 @@ export const practice = {
   country: "DE",
   phoneDisplay: "0351 / XXX XX XX",
   phoneHref: "tel:+493510000000",
+  // Fiktive WhatsApp-Nummer dieser Konzeptstudie, ohne führendes "+".
+  whatsappNumber: "493510000000",
   email: "termin@lindenbogen.example",
   openingHours: [
     { days: "Montag – Donnerstag", hours: "08:00 – 19:00 Uhr" },

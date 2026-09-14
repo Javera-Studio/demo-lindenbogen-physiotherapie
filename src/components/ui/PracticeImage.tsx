@@ -11,7 +11,6 @@ type Aspect = keyof typeof aspectClasses;
 
 /**
  * Fertiges Praxisbild mit festem Seitenverhältnis (kein Layout Shift).
- * Ersetzt PlaceholderImage überall dort, wo bereits ein finales Foto vorliegt.
  */
 export function PracticeImage({
   src,

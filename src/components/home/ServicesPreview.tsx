@@ -1,27 +1,32 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ServiceCard } from "@/components/ServiceCard";
-import { services } from "@/lib/data/services";
+import { LinkButton } from "@/components/ui/Button";
+import { ServiceIndexList } from "@/components/ServiceIndexList";
 
 export function ServicesPreview() {
   return (
-    <section className="bg-cream-soft py-16 sm:py-20">
+    <section className="bg-mist py-16 sm:py-20">
       <Container>
         <Reveal>
           <SectionHeading
             eyebrow="Leistungen"
-            title="Unsere Behandlungen im Überblick"
-            description="Sechs zentrale Leistungen – die passende Kombination richten wir individuell nach Befund und ärztlicher Verordnung aus."
+            title="Unsere Leistungen auf einen Blick"
+            description="Die passende Kombination richten wir individuell nach Befund und ärztlicher Verordnung aus. Alle Details, Einsatzbereiche und Preise finden Sie auf der Leistungsseite."
           />
         </Reveal>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <Reveal key={service.slug} delay={index * 60}>
-              <ServiceCard service={service} />
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={80}>
+          <div className="mt-10">
+            <ServiceIndexList basePath="/leistungen" />
+          </div>
+        </Reveal>
+        <Reveal delay={140}>
+          <div className="mt-8">
+            <LinkButton href="/leistungen" variant="secondary">
+              Alle Leistungen im Detail ansehen
+            </LinkButton>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

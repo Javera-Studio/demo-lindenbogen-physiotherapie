@@ -22,7 +22,7 @@ const steps = [
 
 export function ProcessSteps() {
   return (
-    <section className="bg-cream-soft py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-20">
       <Container>
         <Reveal>
           <SectionHeading eyebrow="Ablauf" title="In drei Schritten zu Ihrer Behandlung" />

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function PatienteninformationenPage() {
   return (
     <>
-      <section className="bg-gradient-to-b from-cream-soft to-cream py-14 sm:py-20">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
           <Reveal>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
@@ -32,7 +32,7 @@ export default function PatienteninformationenPage() {
         </Container>
       </section>
 
-      <section className="py-14 sm:py-20">
+      <section className="bg-mist py-14 sm:py-20">
         <Container className="max-w-3xl">
           <Reveal>
             <SectionHeading title="Häufige Fragen" />

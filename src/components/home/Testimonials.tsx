@@ -5,7 +5,7 @@ import { testimonials } from "@/lib/data/testimonials";
 
 export function Testimonials() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-20">
       <Container>
         <Reveal>
           <SectionHeading eyebrow="Stimmen" title="Beispielhafte Rückmeldungen" />

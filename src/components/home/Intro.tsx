@@ -10,7 +10,7 @@ const trustPoints = [
 
 export function Intro() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-20">
       <Container>
         <Reveal>
           <SectionHeading title="Therapie, die zu Ihrem Alltag passt." />

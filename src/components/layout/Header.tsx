@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { mainNav } from "@/lib/nav";
 import { practice } from "@/lib/data/practice";
+import { LogoMark } from "@/components/layout/LogoMark";
 
 export function Header() {
   const pathname = usePathname();
@@ -25,21 +25,15 @@ export function Header() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-cream/95 backdrop-blur supports-[backdrop-filter]:bg-cream/85">
+    <header className="sticky top-0 z-50 border-b border-line/80 bg-white">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
-        <Link href="/" className="flex shrink-0 items-center">
-          <Image
-            src="/logo-lindenbogen.svg"
-            alt="LINDENBOGEN Physiotherapie – Praxis für Physiotherapie in Dresden-Plauen"
-            width={228}
-            height={45}
-            className="h-8 w-auto sm:h-10 lg:h-11"
-          />
+        <Link href="/" className="flex shrink-0 items-center" aria-label="Zur Startseite von LINDENBOGEN Physiotherapie">
+          <LogoMark className="h-[38px] w-auto sm:h-[47px] xl:h-[51px]" />
         </Link>
 
         <nav
           aria-label="Hauptnavigation"
-          className="hidden items-center gap-7 lg:flex"
+          className="hidden items-center gap-6 xl:flex"
         >
           {mainNav.map((item) => {
             const active = pathname === item.href;
@@ -58,7 +52,7 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden shrink-0 lg:flex">
+        <div className="hidden shrink-0 xl:flex">
           <Link
             href="/kontakt"
             className="inline-flex min-h-11 items-center justify-center rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-terracotta-dark"
@@ -67,7 +61,7 @@ export function Header() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <a
             href={practice.phoneHref}
             className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-petrol/30 text-petrol-dark"
@@ -99,7 +93,7 @@ export function Header() {
       <div
         id="mobile-nav"
         hidden={!menuOpen}
-        className="border-t border-line bg-cream lg:hidden"
+        className="border-t border-line bg-white xl:hidden"
       >
         <nav aria-label="Mobile Hauptnavigation" className="flex flex-col px-5 py-3">
           {mainNav.map((item) => {

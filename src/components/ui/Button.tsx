@@ -9,7 +9,7 @@ const variantClasses: Record<Variant, string> = {
   secondary:
     "bg-transparent text-petrol border border-petrol hover:bg-petrol-soft",
   ghost:
-    "bg-transparent text-ink border border-line hover:bg-cream-soft",
+    "bg-transparent text-ink border border-line hover:bg-mist",
   // Terrakotta-CTA, z. B. für den primären Hero-Call-to-Action auf dunklem Grund.
   accent:
     "bg-terracotta text-cream hover:bg-terracotta-dark active:bg-terracotta-dark",

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function PraxisTeamPage() {
   return (
     <>
-      <section className="bg-gradient-to-b from-cream-soft to-cream py-14 sm:py-20">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
           <Reveal>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
@@ -34,7 +34,7 @@ export default function PraxisTeamPage() {
         </Container>
       </section>
 
-      <section className="py-14 sm:py-16">
+      <section className="bg-mist py-14 sm:py-16">
         <Container>
           <Reveal>
             <PracticeImage
@@ -47,7 +47,7 @@ export default function PraxisTeamPage() {
         </Container>
       </section>
 
-      <section className="bg-cream-soft py-14 sm:py-16">
+      <section className="bg-white py-14 sm:py-16">
         <Container>
           <div className="grid gap-6 lg:grid-cols-[1fr_1.25fr] lg:items-center">
             <Reveal>
@@ -70,7 +70,7 @@ export default function PraxisTeamPage() {
         </Container>
       </section>
 
-      <section className="py-14 sm:py-16">
+      <section className="bg-mist py-14 sm:py-16">
         <Container className="max-w-3xl">
           <Reveal>
             <SectionHeading
@@ -83,7 +83,7 @@ export default function PraxisTeamPage() {
         </Container>
       </section>
 
-      <section className="bg-cream-soft py-14 sm:py-20">
+      <section className="bg-white py-14 sm:py-20">
         <Container>
           <Reveal>
             <SectionHeading eyebrow="Team" title="Die Menschen hinter LINDENBOGEN" />

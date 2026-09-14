@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import { services } from "@/lib/data/services";
 
 const inputClasses =
-  "min-h-12 w-full rounded-xl border border-line bg-cream px-4 py-2.5 text-base text-ink placeholder:text-ink-soft/70 focus-visible:border-petrol";
+  "min-h-12 w-full rounded-xl border border-line bg-white px-4 py-2.5 text-base text-ink placeholder:text-ink-soft/70 focus-visible:border-petrol";
 
 const labelClasses = "text-sm font-medium text-ink";
 
