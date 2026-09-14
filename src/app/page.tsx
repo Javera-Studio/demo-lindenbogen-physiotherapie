@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { Intro } from "@/components/home/Intro";
+import { TrustBar } from "@/components/home/TrustBar";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { ParallaxStatement } from "@/components/home/ParallaxStatement";
 import { ProcessSteps } from "@/components/home/ProcessSteps";
@@ -11,6 +12,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <TrustBar />
       <Intro />
       <ServicesPreview />
       <ParallaxStatement />

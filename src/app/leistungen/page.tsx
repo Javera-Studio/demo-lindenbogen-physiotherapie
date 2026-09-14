@@ -13,16 +13,31 @@ export const metadata: Metadata = {
     "Physiotherapeutische Leistungen von LINDENBOGEN in Dresden-Plauen: Krankengymnastik, Manuelle Therapie, Lymphdrainage, KGG, Sportphysiotherapie und CMD-Behandlung – inklusive transparenter Musterpreise.",
 };
 
-// Nur Leistungen, für die bereits ein finales Foto vorliegt, erhalten ein
-// Bild im Detailabschnitt. Kein Platzhalter und kein Fremdbild als Ersatz.
+// Finale, eigens für die Konzeptpraxis erstellte Bilder für alle sechs Leistungen.
 const serviceImages: Partial<Record<string, { src: string; alt: string }>> = {
+  krankengymnastik: {
+    src: "/images/therapie-krankengymnastik.webp",
+    alt: "Physiotherapeutin begleitet eine Patientin bei einer kontrollierten aktiven Übung in der Praxis",
+  },
   "manuelle-therapie": {
     src: "/images/therapie-manuelle-therapie.webp",
-    alt: "Physiotherapeutin führt eine manuelle Behandlungstechnik an Schulter und Arm eines Patienten durch",
+    alt: "Physiotherapeutin behandelt gezielt Schulter und Arm eines Patienten",
   },
   "manuelle-lymphdrainage": {
     src: "/images/therapie-manuelle-lymphdrainage.webp",
-    alt: "Physiotherapeutin führt eine sanfte manuelle Lymphdrainage durch",
+    alt: "Physiotherapeutin führt eine sanfte manuelle Lymphdrainage am Bein einer Patientin durch",
+  },
+  "krankengymnastik-am-geraet": {
+    src: "/images/therapie-krankengymnastik-am-geraet.webp",
+    alt: "Physiotherapeutin begleitet einen Patienten beim kontrollierten Training an einem medizinischen Kabelzug",
+  },
+  sportphysiotherapie: {
+    src: "/images/therapie-sportphysiotherapie.webp",
+    alt: "Physiotherapeut begleitet eine Patientin bei einer kontrollierten Balanceübung",
+  },
+  "cmd-kieferbehandlung": {
+    src: "/images/therapie-cmd-kieferbehandlung.webp",
+    alt: "Physiotherapeutin führt eine sanfte äußere Behandlung des Kiefergelenks durch",
   },
 };
 

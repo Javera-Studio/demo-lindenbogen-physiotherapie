@@ -2,7 +2,7 @@ import Image from "next/image";
 import { LinkButton } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
-const trustItems = ["Alle Kassen", "Privatpatienten", "Selbstzahler"];
+const trustItems = ["Persönliche Betreuung", "Zeitnahe Termine", "Moderne Praxisräume"];
 
 export function Hero() {
   return (

@@ -1,14 +1,15 @@
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { PracticeImage } from "@/components/ui/PracticeImage";
 import { TeamMember } from "@/lib/data/team";
 
 export function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface">
-      <PlaceholderImage
-        finalSrc={member.imageSrc}
+      <PracticeImage
+        src={member.imageSrc}
         alt={member.imageAlt}
         aspect="4/5"
-        tone="sage"
+        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+        objectPosition="center top"
         className="rounded-none"
       />
       <div className="flex flex-1 flex-col p-6">
