@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PracticeImage } from "@/components/ui/PracticeImage";
+import { ArchMark } from "@/components/ui/ArchMark";
 import { TeamCard } from "@/components/TeamCard";
 import { team } from "@/lib/data/team";
 
@@ -15,16 +16,17 @@ export const metadata: Metadata = {
 export default function PraxisTeamPage() {
   return (
     <>
-      <section className="bg-white py-14 sm:py-20">
-        <Container>
-          <Reveal>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
+      <section className="bg-white pb-8 pt-14 sm:pb-10 sm:pt-16">
+        <Container className="flex flex-col items-center text-center">
+          <Reveal className="flex flex-col items-center">
+            <ArchMark className="h-9 w-auto sm:h-10" />
+            <p className="mt-4 mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
               Praxis & Team
             </p>
-            <h1 className="max-w-2xl font-serif text-4xl leading-tight text-petrol-dark sm:text-5xl">
+            <h1 className="max-w-xl text-balance font-serif text-4xl leading-tight text-petrol-dark sm:text-5xl">
               Persönlich betreut statt Fließbandbehandlung
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+            <p className="mt-5 max-w-[820px] text-base leading-relaxed text-ink-soft sm:text-lg">
               LINDENBOGEN ist bewusst als kleine, inhabergeführte Praxis
               angelegt. Ein überschaubares Team, klare Zuständigkeiten und
               genug Zeit pro Termin – das ist unsere Haltung zu guter

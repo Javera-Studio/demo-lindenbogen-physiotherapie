@@ -7,6 +7,8 @@ export type TeamMember = {
   imageSrc: string;
   imageAlt: string;
   aspect: "portrait" | "wide";
+  /** Gleicht einen weiteren Bildausschnitt optisch an die anderen Teamfotos an. */
+  imageZoom?: number;
 };
 
 export const team: TeamMember[] = [
@@ -27,6 +29,8 @@ export const team: TeamMember[] = [
     imageAlt:
       "Porträt von Jana Richter, Physiotherapeutin und Inhaberin von LINDENBOGEN Physiotherapie",
     aspect: "portrait",
+    // Weiterer Bildausschnitt als bei Leon; Zoom gleicht die wirkende Bildgröße an.
+    imageZoom: 1.15,
   },
   {
     slug: "leon-wagner",
@@ -56,5 +60,7 @@ export const team: TeamMember[] = [
     imageSrc: "/images/team-miriam-scholz.webp",
     imageAlt: "Porträt von Miriam Scholz, Praxisorganisation und Empfang bei LINDENBOGEN Physiotherapie",
     aspect: "portrait",
+    // Weiterer Bildausschnitt als bei Jana/Leon; Zoom gleicht die wirkende Bildgröße an.
+    imageZoom: 1.2,
   },
 ];

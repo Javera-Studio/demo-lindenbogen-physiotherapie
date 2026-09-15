@@ -10,7 +10,6 @@ const routes = [
   "",
   "/leistungen",
   "/praxis-team",
-  "/patienteninformationen",
   "/kontakt",
   "/impressum",
   "/datenschutz",

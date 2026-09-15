@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { AiLabel } from "@/components/ui/AiLabel";
 
 /**
  * Signature-Element der Startseite: ruhige, hochwertige Statement-Section mit
@@ -89,6 +90,8 @@ export function ParallaxStatement() {
 
         {/* Petrol-Überlagerung für ausreichenden Kontrast des hellen Textes */}
         <div className="absolute inset-0 bg-petrol-dark/60" aria-hidden="true" />
+
+        <AiLabel />
 
         <div className="relative flex h-full items-center justify-center px-5">
           <div className="max-w-2xl text-center">

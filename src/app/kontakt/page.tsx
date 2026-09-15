@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MapPlaceholder } from "@/components/ui/MapPlaceholder";
+import { ArchMark } from "@/components/ui/ArchMark";
 import { ContactForm } from "@/components/ContactForm";
 import { practice } from "@/lib/data/practice";
 import { whatsappHref } from "@/lib/whatsapp";
@@ -17,15 +18,16 @@ export default function KontaktPage() {
   return (
     <>
       <section className="bg-white py-14 sm:py-20">
-        <Container>
-          <Reveal>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
+        <Container className="flex flex-col items-center text-center">
+          <Reveal className="flex flex-col items-center">
+            <ArchMark className="h-9 w-auto sm:h-10" />
+            <p className="mt-4 mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-terracotta-dark">
               Kontakt & Termin
             </p>
-            <h1 className="max-w-2xl font-serif text-4xl leading-tight text-petrol-dark sm:text-5xl">
+            <h1 className="max-w-xl text-balance font-serif text-4xl leading-tight text-petrol-dark sm:text-5xl">
               Termin anfragen
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
+            <p className="mt-5 max-w-[820px] text-base leading-relaxed text-ink-soft sm:text-lg">
               Nutzen Sie das Formular oder kontaktieren Sie uns direkt
               telefonisch bzw. per E-Mail. Wir melden uns zeitnah bei Ihnen
               zurück.

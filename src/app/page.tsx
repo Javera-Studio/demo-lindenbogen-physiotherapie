@@ -6,6 +6,7 @@ import { ParallaxStatement } from "@/components/home/ParallaxStatement";
 import { ProcessSteps } from "@/components/home/ProcessSteps";
 import { TeamPreview } from "@/components/home/TeamPreview";
 import { Testimonials } from "@/components/home/Testimonials";
+import { PatientInfo } from "@/components/home/PatientInfo";
 import { ContactSection } from "@/components/home/ContactSection";
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <ProcessSteps />
       <TeamPreview />
       <Testimonials />
+      <PatientInfo />
       <ContactSection />
     </>
   );

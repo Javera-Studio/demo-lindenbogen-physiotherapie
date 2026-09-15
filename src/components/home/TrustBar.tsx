@@ -5,11 +5,11 @@ const trustStats = [
     value: "4,9",
     accent: "★",
     valueLabel: "4,9 von 5 Sternen",
-    label: "aus 87 Google-Bewertungen*",
+    label: "aus 87 Google-Bewertungen",
   },
   {
     value: "10+ Jahre",
-    label: "Berufserfahrung*",
+    label: "Berufserfahrung",
   },
   {
     value: "Alle Kassen",
@@ -48,10 +48,6 @@ export function TrustBar() {
             </div>
           ))}
         </dl>
-        <p className="-mt-2 pb-4 text-center text-[0.68rem] text-ink-soft/75">
-          <span className="text-terracotta-dark">*</span> Beispielwerte der
-          fiktiven Konzeptpraxis
-        </p>
       </Container>
     </section>
   );

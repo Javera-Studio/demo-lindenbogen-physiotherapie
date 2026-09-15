@@ -10,6 +10,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
         aspect="4/5"
         sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
         objectPosition="center top"
+        zoom={member.imageZoom ?? 1}
         className="rounded-none"
       />
       <div className="flex flex-1 flex-col p-6">

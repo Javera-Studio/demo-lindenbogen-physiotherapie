@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AiLabel } from "@/components/ui/AiLabel";
 
 const aspectClasses = {
   "16/10": "aspect-[16/10]",
@@ -19,6 +20,7 @@ export function PracticeImage({
   sizes = "100vw",
   priority = false,
   objectPosition = "center",
+  zoom = 1,
   className = "",
 }: {
   src: string;
@@ -27,6 +29,9 @@ export function PracticeImage({
   sizes?: string;
   priority?: boolean;
   objectPosition?: string;
+  /** Optionaler Zuschnitts-Zoom (>1), um unterschiedlich weite Bildausschnitte
+   * innerhalb einer Kartenreihe optisch anzugleichen, ohne das Foto neu zu erstellen. */
+  zoom?: number;
   className?: string;
 }) {
   return (
@@ -40,8 +45,18 @@ export function PracticeImage({
         sizes={sizes}
         priority={priority}
         className="object-cover"
-        style={{ objectPosition }}
+        style={{
+          objectPosition,
+          // Zoom wird bewusst mittig verankert (nicht objectPosition-basiert):
+          // Bei exakt passendem Seitenverhältnis beschneidet object-position
+          // nichts, daher zoomt der Ausschnitt von der Bildmitte aus nach
+          // innen – das rückt einen höher sitzenden Bildausschnitt (z. B.
+          // einen Kopf) näher an den oberen Bildrand heran.
+          transform: zoom !== 1 ? `scale(${zoom})` : undefined,
+          transformOrigin: "center",
+        }}
       />
+      <AiLabel />
     </div>
   );
 }
